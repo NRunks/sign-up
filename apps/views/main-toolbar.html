@@ -1,0 +1,42 @@
+<md-toolbar class="md-primary md-hue-3">
+  <div layout="row" layout-align="start center">
+    <div>
+      <md-button class="md-raised md-accent" ng-click="vm.logout()" aria-label="Exit App"> Exit App </md-button>
+    </div>
+    <div layout="row" flex>
+      <md-input-container flex>
+        <md-icon md-svg-src="./apps/icons/ic_search_white_24px.svg" class="icons"></md-icon>
+        <input ng-model="searchInput" placeholder="Search" style="color: #ffffff !important;">
+      </md-input-container>
+    </div>
+    <div>
+      <md-list flex>
+        <md-list-item class="md-3-line side-menuhome" style="padding-bottom: 0; float: right;">
+          <div class="md-list-item-text" layout="column" flex style="padding-bottom: 0; padding-right: 16px; position: relative;">
+            <md-truncate>
+              <h3 style="color: #ffffff;">{{ vm.user.username}}</h3>
+            </md-truncate>
+          </div>
+          <md-menu>
+            <img ng-src="{{vm.avatar}}" class="md-avatar" style="background: #ffffff;" />
+            <md-menu-content width="4">
+              <md-menu-item>
+                <md-button ng-click="vm.deleteProfile()">
+                  <md-icon md-svg-icon="./apps/icons/ic_delete_forever_black_24px.svg" md-menu-align-target></md-icon>
+                  Delete Profile </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </md-list-item>
+      </md-list>
+    </div>
+  </div>
+</md-toolbar>
+<md-nav-bar md-selected-nav-item="currentNavItem" style="background: #ffffff">
+  <md-nav-item md-nav-sref="home.main.feed" name="feed" value="feed">Home</md-nav-item>
+  <md-nav-item md-nav-sref="home.main.profile" name="profile" value="profile">My Profile</md-nav-item>
+  <md-nav-item md-nav-sref="home.main.messages.main" name="messages" value="messages">Messages</md-nav-item>
+  <md-nav-item md-nav-sref="home.main.community" name="community" value="community">Community</md-nav-item>
+  <!--<md-nav-item md-nav-sref="#" name="community" value="community"> My Community </md-nav-item>-->
+</md-nav-bar>
+<div class="main-body-content" layout-fill ui-view flex>

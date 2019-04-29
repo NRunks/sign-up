@@ -1,0 +1,36 @@
+<md-content flex style="height: 60vh;">
+    <md-list flex>
+        <md-subheader class="md-no-sticky">Messages</md-subheader>
+        <md-list-item class="md-3-line" ng-click="null">
+            <img ng-src="./apps/icons/adult-attractive-beautiful-415829.jpg" class="md-avatar" alt="Beautiful Lady" />
+            <div class="md-list-item-text" layout="column">
+                <h3 md-truncate>Jennifer C.</h3>
+                <h4 md-truncate>Hey</h4>
+                <p>Hey {{vm.user.username}} my name is Jenny and I'd like to welcome you to the Flamingo app. Please be a part
+                    of our community and remember to enjoy!</p>
+            </div>
+        </md-list-item>
+    </md-list>
+</md-content>
+<div layout="row" layout-align="start start">
+    <md-button class="md-raised md-primary" ng-disabled="true">SEND</md-button>
+    <md-input-container class="md-block" flex>
+        <input type="text" flex>
+    </md-input-container>
+</div>
+<div layout="row" layout-align="start center">
+    <md-button class="md-icon-button md-accent" aria-label="Insert Emoticon">
+        <md-icon md-svg-icon="./apps/icons/white_baseline-insert_emoticon-24px.svg"></md-icon>
+    </md-button>
+    <md-button class="md-icon-button md-accent" aria-label="Insert Image">
+        <md-icon md-svg-icon="./apps/icons/white_baseline-insert_photo-24px.svg"></md-icon>
+    </md-button>
+    <md-button class="md-icon-button md-accent" aria-label="Insert Link">
+            <md-icon md-svg-icon="./apps/icons/white_baseline-insert_link-24px.svg"></md-icon>
+        </md-button>
+</div>
+
+<!--<div layout="row" style="background: #ec407a; height: 10vh; padding: 8px;" layout-align="start center">
+        <md-button class="md-raised md-accent" style="margin: 0px; height: 40px;">SEND</md-button>
+        <input ng-model="user.name" type="text" flex style="margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 32px; border-radius: 5px; height: 40px;">
+</div>-->

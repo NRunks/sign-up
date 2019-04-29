@@ -1,0 +1,591 @@
+<div flex id="feed-container" ng-cloak layout-fill>
+
+  <!-- Photo Gallery 1 -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/men/61.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Gregory Miller
+          <small style="color: #909090;">(Photographer/Videographer)</small>
+        </span>
+        <span class="md-subhead">uploaded {{vm.photos1.length}} new photos to the album
+          <a href="#" style="color: #ff4081; text-decoration: none !important;">My Collection &#9733</a>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex="50" flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">4 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>New York City, New York</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content></br></br>
+      <hr></hr>
+      <small style="color: #ff4081;">4 people loved this post &hearts;</small>
+      <!--<div class="image-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+          <img ng-src="https://farm2.staticflickr.com/1727/40584150150_292fb74424.jpg" class="md-card-image" alt="Feed Item">
+        </div>-->
+    </md-card-content>
+    <div ng-if="vm.photos1.length > 0">
+      <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="5" md-row-height-gt-md="8:6" md-row-height="4:3" md-gutter="8px"
+        md-gutter-gt-sm="4px">
+        <md-grid-tile ng-repeat="photo in vm.photos1" md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+          <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" data-ng-click="vm.goTo('https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '.jpg')"
+            alt="photo" layout-fill>
+          <md-grid-tile-footer>
+            <h3>{{photo.title}}</h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+    <md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+      <div class="comments-container" layout="column" layout-align="center center">
+        <div class="comment" layout="row" layout-align="start center" layout-fill>
+          <img class="comment-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/men/61.jpg"></img>
+          <span md-truncate class="comment-text" flex>This is an awesome gallery!</span>
+        </div>
+        <a href="#" class="comments-link">+ View All 51 Comments</a>
+      </div>
+    </md-card-content>
+  </md-card>
+
+  <!--- Article 1 -->
+
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/women/45.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Jessica Wilson
+          <small style="color: #909090;">(Journalist/Blogger)</small>
+        </span>
+        <span class="md-subhead">shared an
+          <a href="{{vm.article1.url}}" style="color: #ff4081; text-decoration: none !important;">article</a> from
+          <a href="{{vm.article1.url}}" style="color: #ff4081; text-decoration: none !important;">
+            <b>{{vm.article1.source.name}}</b>
+          </a>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">4 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>Mumbai, India</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <hr></hr>
+      <h2 class="article-title">{{vm.article1.title}}</h2>
+      <h3 class="article-description">{{vm.article1.description}}</h3>
+      <small style="color: #ff4081;">2 people loved this post &hearts;</small>
+      <div class="image-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+        <img ng-src="{{vm.article1.urlToImage}}" ng-click="vm.goTo(vm.article1.url)" class="md-card-image" alt="Feed Item">
+        </img>
+      </div>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+      <div class="comments-container" layout="column" layout-align="center center">
+        <div class="comment" layout="row" layout-align="start center" layout-fill>
+          <img class="comment-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/men/69.jpg"></img>
+          <span md-truncate class="comment-text" flex>Interesting article.</span>
+        </div>
+        <a href="#" class="comments-link">+ View All 7 Comments</a>
+      </div>
+    </md-card-content>
+  </md-card>
+
+  <!--- Quote 1 -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/women/94.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Sarah Fox
+          <small style="color: #909090;">(Other)</small>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">5 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>Copenhagen, Denmark</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <p class="quote-text">{{vm.quote1.text}}</p>
+      <span class="quote-author">-{{vm.quote1.author}}</span>
+      <hr></hr>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+      <div class="comments-container" layout="column" layout-align="center center">
+        <div class="comment" layout="row" layout-align="start center" layout-fill>
+          <img class="comment-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/women/28.jpg"></img>
+          <span md-truncate class="comment-text" flex>Words of wisdom.</span>
+        </div>
+        <a href="#" class="comments-link">+ View All 3 Comments</a>
+      </div>
+    </md-card-content>
+  </md-card>
+
+
+  <!---  Album 1  -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/men/78.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Ryan Ferguson
+          <small style="color: #909090;">(Musician/DJ)</small>
+        </span>
+        <span class="md-subhead">shared an
+          <a href="{{vm.album1.url}}" style="color: #ff4081; text-decoration: none !important;">album</a>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">4 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>Seoul, South Korea</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <hr></hr>
+      <h2 class="article-title">{{vm.album1.name}}</h2>
+      <h3 class="article-description">{{vm.album1.artist}}</h3>
+      <small style="color: #ff4081;">1 person loved this post &hearts;</small>
+      <div class="image-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+        <img ng-src="{{vm.album1.image[3]['#text']}}" ng-click="vm.goTo(vm.album1.url)" class="md-card-image" alt="Feed Item">
+        </img>
+      </div>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+      <div class="comments-container" layout="column" layout-align="center center">
+        <div class="comment" layout="row" layout-align="start center" layout-fill>
+          <img class="comment-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/women/50.jpg"></img>
+          <span md-truncate class="comment-text" flex>I consider this one a classic!</span>
+        </div>
+        <a href="#" class="comments-link">+ View All 2 Comments</a>
+      </div>
+    </md-card-content>
+  </md-card>
+
+  <!--- Quote 2 -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/women/83.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Julie Haartmann
+          <small style="color: #909090;">(Other)</small>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">5 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>Hamburg, Germany</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <p class="quote-text">{{vm.quote2.text}}</p>
+      <span class="quote-author">-{{vm.quote2.author}}</span>
+      <hr></hr>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+    </md-card-content>
+  </md-card>
+
+
+  <!---  Album 2  -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/men/0.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">David Pierce
+          <small style="color: #909090;">(Musician/DJ)</small>
+        </span>
+        <span class="md-subhead">shared an
+          <a href="{{vm.album2.url}}" style="color: #ff4081; text-decoration: none !important;">album</a>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">4 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>johannesburg, South Africa</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <hr></hr>
+      <h2 class="article-title">{{vm.album2.name}}</h2>
+      <h3 class="article-description">{{vm.album2.artist}}</h3>
+      <small style="color: #ff4081;">1 person loved this post &hearts;</small>
+      <div class="image-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+        <img ng-src="{{vm.album2.image[3]['#text']}}" ng-click="vm.goTo(vm.album2.url)" class="md-card-image" alt="Feed Item">
+        </img>
+      </div>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+    </md-card-content>
+  </md-card>
+
+  <!--- Article 2 -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/women/55.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Natalia Smith
+          <small style="color: #909090;">(Journalist/Blogger)</small>
+        </span>
+        <span class="md-subhead">shared an
+          <a href="{{vm.article2.url}}" style="color: #ff4081; text-decoration: none !important;">article</a> from
+          <a href="{{vm.article2.url}}" style="color: #ff4081; text-decoration: none !important;">
+            <b>{{vm.article2.source.name}}</b>
+          </a>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">4 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>Buenos Aires, Argentina</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <hr></hr>
+      <h2 class="article-title">{{vm.article2.title}}</h2>
+      <h3 class="article-description">{{vm.article2.description}}</h3>
+      <small style="color: #ff4081;">2 people loved this post &hearts;</small>
+      <div class="image-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+        <img ng-src="{{vm.article2.urlToImage}}" ng-click="vm.goTo(vm.article2.url)" class="md-card-image" alt="Feed Item">
+        </img>
+      </div>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+    </md-card-content>
+  </md-card>
+
+
+
+
+  <!--- Article 3 -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/men/81.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Diego Sanchez
+          <small style="color: #909090;">(Journalist/Blogger)</small>
+        </span>
+        <span class="md-subhead">shared an
+          <a href="{{vm.article3.url}}" style="color: #ff4081; text-decoration: none !important;">article</a> from
+          <a href="{{vm.article3.url}}" style="color: #ff4081; text-decoration: none !important;">
+            <b>{{vm.article3.source.name}}</b>
+          </a>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">4 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>Rio de Janeiro, Brazil</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <hr></hr>
+      <h2 class="article-title">{{vm.article3.title}}</h2>
+      <h3 class="article-description">{{vm.article3.description}}</h3>
+      <small style="color: #ff4081;">2 people loved this post &hearts;</small>
+      <div class="image-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+        <img ng-src="{{vm.article3.urlToImage}}" ng-click="vm.goTo(vm.article3.url)" class="md-card-image" alt="Feed Item">
+        </img>
+      </div>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+    </md-card-content>
+  </md-card>
+
+  <!-- Photo Gallery 2 -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/men/55.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Kent Bastian
+          <small style="color: #909090;">(Photographer/Videographer)</small>
+        </span>
+        <span class="md-subhead">uploaded {{vm.photos2.length}} new photos to the album
+          <a href="#" style="color: #ff4081; text-decoration: none !important;">My Collection &#9733</a>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">4 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>San Francisco, California</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <hr></hr>
+      <small style="color: #ff4081;">4 people loved this post &hearts;</small>
+      <!--<div class="image-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+            <img ng-src="https://farm2.staticflickr.com/1727/40584150150_292fb74424.jpg" class="md-card-image" alt="Feed Item">
+          </div>-->
+    </md-card-content>
+    <div ng-if="vm.photos2.length > 0">
+      <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="5" md-row-height-gt-md="8:6" md-row-height="4:3" md-gutter="8px"
+        md-gutter-gt-sm="4px">
+        <md-grid-tile ng-repeat="photo in vm.photos2" md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+          <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" data-ng-click="vm.goTo('https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '.jpg')"
+            alt="photo" layout-fill>
+          <md-grid-tile-footer>
+            <h3>{{photo.title}}</h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+    <md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+    </md-card-content>
+  </md-card>
+
+  <!--  Video 1  -->
+  <md-card class="feed-item">
+    <md-card-header>
+      <md-card-avatar>
+        <img class="md-avatar-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/women/43.jpg"></img>
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">Viviana Gomez
+          <small style="color: #909090;">(Photographer/Videographer)</small>
+        </span>
+        <span class="md-subhead">uploaded a video to the album
+          <a href="#" style="color: #ff4081; text-decoration: none !important;">&#9728 Vacation &#9728</a>
+        </span>
+      </md-card-header-text>
+      <div layout="column" layout-align="start end" md-truncate flex-gt-md="40">
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-access_time-24px.svg" aria-label="time posted"></md-icon>
+          <small style="color: #909090;">4 hours ago</small>
+        </div>
+        <div>
+          <md-icon md-svg-src="./apps/icons/outline-location_city-24px.svg" aria-label="location posted"></md-icon>
+          <small style="color: #909090;" md-truncate>Nassau, Bahamas</small>
+        </div>
+      </div>
+    </md-card-header>
+    <md-card-content>
+      <hr></hr>
+      <small style="color: #ff4081;">4 people loved this post &hearts;</small>
+      <!--<div class="image-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+            <img ng-src="https://farm2.staticflickr.com/1727/40584150150_292fb74424.jpg" class="md-card-image" alt="Feed Item">
+          </div>-->
+    </md-card-content>
+    <md-card-content>
+      <div class="video-post feed-item-inner-container" layout="row" layout-align="center center" flex>
+        <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="1600" height="660" poster="./apps/videos/beach-thumb.jpg"
+          data-setup="{}">
+          <source src="https://storage.googleapis.com/signupproject-200505.appspot.com/beach.webm" type='video/webm'>
+          <source src="https://storage.googleapis.com/signupproject-200505.appspot.com/beach.ogv" type='video/ogg'>
+          <source src="https://storage.googleapis.com/signupproject-200505.appspot.com/beach.mp4" type='video/mp4'>
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
+      </div>
+      <md-card-actions layout="row" layout-align="end center">
+        <div class="feed-item-actions-container" layout="row" layout-align="center center" flex>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="./apps/icons/outline-favorite-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="./apps/icons/outline-menu-24px_white.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="./apps/icons/outline-share-24px_white.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-card-actions>
+      <div class="comments-container" layout="column" layout-align="center center">
+        <div class="comment" layout="row" layout-align="start center" layout-fill>
+          <img class="comment-icon" style="border-radius: 50%;" ng-src="https://randomuser.me/api/portraits/men/23.jpg"></img>
+          <span md-truncate class="comment-text" flex>Nice! Wish I were there!</span>
+        </div>
+        <a href="#" class="comments-link">+ View All 16 Comments</a>
+      </div>
+    </md-card-content>
+  </md-card>
+  <div id="feed-load-container" ng-show="vm.isLoading" layout="row" layout-sm="column" layout-align="center center">
+      <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+</div>
+
+<!--<div flex ng-cloak layout-fill style="background: red;">
+  <re-feed-item  re-type="photo" re-item="vm.photo" re-poster="Rasheed Miller"></re-feed-item>
+  </div>-->
+<!--<md-grid-list
+              md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="5"
+              md-row-height-gt-md="1:1" md-row-height="4:3"
+              md-gutter="8px" md-gutter-gt-sm="4px" >
+      
+          <md-grid-tile ng-repeat="article in vm.newsArticles"
+                        md-rowspan="1"
+                        md-colspan="1"
+                        md-colspan-sm="1"
+                        md-colspan-xs="1" >
+                        <a href="{{article.url}}" style="min-width: 100%; max-width: 100%; width: 100%; min-height: 100%; max-height: 100%; height: 100%;">
+                        <img src="{{article.urlToImage}}" alt="ESPN" layout-fill>
+            <md-grid-tile-footer><h3>{{article.title}}</h3></md-grid-tile-footer>
+          </md-grid-tile>
+        </md-grid-list>-->

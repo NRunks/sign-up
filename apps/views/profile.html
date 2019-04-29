@@ -1,0 +1,204 @@
+<div class="profile-container">
+  <div class="content-container md-primary md-hue-2">
+    <div class="md-padding" layout="row" layout-align="space-around start" layout-fill layout-wrap>
+      <md-card class="profile-card">
+        <md-card-header style="margin-bottom: 25px;">
+          <md-card-avatar>
+            <md-icon class="md-avatar-icon" md-svg-icon="./apps/icons/ic_person_pin_white_24px.svg" style="background: #F50057;"></md-icon>
+          </md-card-avatar>
+          <md-card-header-text>
+            <span class="md-title">{{vm.user.firstname}} {{vm.user.lastname}}</span>
+            <span class="md-subhead">{{vm.user.profession | limitTo:55}}{{( vm.user.profession &&
+              vm.user.profession.length > 55)? '&hellip;' : ''}}
+            </span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-fab-speed-dial md-open="vm.isOpen" md-direction="left" class="md-fling md-hover-full profile-fab"
+            ng-mouseenter="vm.isOpen=true" ng-mouseleave="vm.isOpen=false">
+            <md-fab-trigger>
+              <md-button aria-label="menu" class="md-fab" style="background: #F50057;">
+                <md-tooltip md-direction="top">Menu</md-tooltip>
+                <md-icon md-svg-src="./apps/icons/ic_menu_white_24px.svg"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+              <md-button aria-label="Edit Profile" class="md-fab md-raised md-mini" style="background: #E040FB;">
+                <md-tooltip md-direction="top">Edit</md-tooltip>
+                <md-icon md-svg-src="./apps/icons/ic_mode_edit_white_24px.svg" aria-label="Edit"></md-icon>
+              </md-button>
+              <md-button aria-label="Social Media Links" class="md-fab md-raised md-mini" style="background: #EA80FC;">
+                <md-tooltip md-direction="top">Links</md-tooltip>
+                <md-icon md-svg-src="./apps/icons/ic_share_white_24px.svg" aria-label="Share"></md-icon>
+              </md-button>
+              <!--<md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+          <md-icon md-svg-src="img/icons/facebook.svg" aria-label="Facebook"></md-icon>
+        </md-button>
+        <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+          <md-icon md-svg-src="img/icons/hangout.svg" aria-label="Google Hangout"></md-icon>
+        </md-button>-->
+            </md-fab-actions>
+          </md-fab-speed-dial>
+        </md-card-actions>
+        <div layout="column" layout-align="center center" layout-fill>
+          <div class="profile-photo" layout="row" layout-align="start center" layout-fill>
+            <img ng-src="{{vm.url}}" flex />
+          </div>
+          <a href="#" class="comments-link" style="visibility: hidden">+ View All 16 Comments</a>
+        </div>
+      </md-card>
+      <md-tabs md-dynamic-height md-border-bottom class="md-primary md-hue-2 tabs-container" flex-gt-sm="60" flex="100"
+        style="height: 100vh;">
+        <md-tab label="about">
+          <div class="profile-card md-padding">
+            <div class="profile-section" id="profile-basic-info">
+              <div flex class="profile-info-row">
+                <div flex layout="row">
+                  <div flex="10"></div>
+                  <div flex>
+                    <h5>Contact Information</h5>
+                  </div>
+                </div>
+              </div>
+              <div flex class="profile-info-row">
+                <div flex layout="row">
+                  <div flex="10"></div>
+                  <div flex>
+                    <small>Location</small>
+                  </div>
+                </div>
+                <div flex layout="row">
+                  <div flex="10">
+                    <md-icon flex="20" md-svg-src="./apps/icons/ic_location_on_black_24px.svg" aria-label="android "></md-icon>
+                  </div>
+                  <small flex ng-if="vm.user.state" style="overflow: auto;">{{vm.user.city}}, {{vm.user.state}},
+                    {{vm.user.country.name}}</small>
+                  <small flex ng-if="!vm.user.state" style="overflow: auto;">{{vm.user.city}}, {{vm.user.country.name}}</small>
+                </div>
+              </div>
+              <div flex class="profile-info-row">
+                <div flex layout="row">
+                  <div flex="10"></div>
+                  <div flex>
+                    <small>Email</small>
+                  </div>
+                </div>
+                <div flex layout="row">
+                  <div flex="10">
+                    <md-icon flex="20" md-svg-src="./apps/icons/ic_email_black_24px.svg" aria-label="android "></md-icon>
+                  </div>
+                  <small flex style="overflow: auto;">
+                    <a class="profile-link" href="#">{{vm.user.email}}</a>
+                  </small>
+                </div>
+              </div>
+              <div flex class="profile-info-row">
+                <div flex layout="row">
+                  <div flex="10"></div>
+                  <div flex>
+                    <small>Phone</small>
+                  </div>
+                </div>
+                <div flex layout="row">
+                  <div flex="10">
+                    <md-icon flex="20" md-svg-src="./apps/icons/baseline-phone-24px.svg" aria-label="android "></md-icon>
+                  </div>
+                  <small flex style="overflow: auto;">
+                    <a class="profile-link" href="#">{{vm.user.phone}}</a>
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-section" id="profile-basic-info" style="margin-top: 32px;">
+              <div flex class="profile-info-row">
+                <div flex layout="row">
+                  <div flex="10"></div>
+                  <div flex>
+                    <h5>Basic Information</h5>
+                  </div>
+                </div>
+              </div>
+              <div flex class="profile-info-row">
+                <div flex layout="row">
+                  <div flex="10"></div>
+                  <div flex>
+                    <small>Birthday</small>
+                  </div>
+                </div>
+                <div flex layout="row">
+                  <div flex="10">
+                    <md-icon flex="20" md-svg-src="./apps/icons/ic_location_on_black_24px.svg" aria-label="android "></md-icon>
+                  </div>
+                  <small>{{formattedDOB}}</small>
+                </div>
+              </div>
+              <div flex class="profile-info-row">
+                <div flex layout="row">
+                  <div flex="10"></div>
+                  <div flex>
+                    <small>Gender</small>
+                  </div>
+                </div>
+                <div flex layout="row">
+                  <div flex="10">
+                    <md-icon flex="20" md-svg-src="./apps/icons/ic_email_black_24px.svg" aria-label="android "></md-icon>
+                  </div>
+                  <small flex style="overflow: auto;">{{vm.user.gender}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </md-tab>
+        <md-tab label="gallery">
+          <md-content class="md-padding">
+            <div class="album-container md-padding" layout="column" layout-gt-xs="row" layout-align-gt-xs="space-around center">
+              <!--<md-card flex="30" class="profile-album-preview">
+                <md-toolbar class="md-hue-2">
+                  <div class="md-toolbar-tools profile-album-text">
+                    <h2 md-truncate>Cover Photos</h2>
+                    <span flex></span>
+                    <md-menu>
+                      <md-button aria-label="Open album options" class="md-icon-button" ng-click="$mdMenu.open($event)">
+                        <md-icon md-svg-icon="./apps/icons/ic_menu_white_24px.svg"></md-icon>
+                      </md-button>
+                      <md-menu-content width="6">
+                        <md-menu-item>
+                          <md-button>
+                            <md-icon md-menu-align-target md-svg-icon="./apps/icons/ic_folder_open_black_24px.svg"></md-icon>
+                            Open </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                          <md-button>
+                            <md-icon md-menu-align-target md-svg-icon="./apps/icons/ic_mode_edit_black_24px.svg"></md-icon>
+                            Edit </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                          <md-button>
+                            <md-icon md-menu-align-target md-svg-icon="./apps/icons/ic_delete_forever_black_24px.svg"></md-icon>
+                            Remove Album </md-button>
+                        </md-menu-item>
+                      </md-menu-content>
+                    </md-menu>
+                  </div>
+                </md-toolbar>
+                <img ng-src="{{vm.url}}" />
+              </md-card>-->
+              <div flex="50">
+                <md-card class="profile-album-preview" >
+                  <md-card-header>
+                    <md-card-header-text>
+                      <span class="md-subhead">Add Album</span>
+                    </md-card-header-text>
+                  </md-card-header>
+                  <img ng-src="./apps/icons/add-file-logo.png">
+                </md-card>
+              </div>              
+              <div flex="50"></div>
+            </div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </div>
+  </div>
+</div>

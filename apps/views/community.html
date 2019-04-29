@@ -1,0 +1,57 @@
+<div class="connections-container" layout="row" layout-align="space-around center" layout-wrap>
+  <md-card class="connections-card" md-theme="default" flex-gt-xs="20" flex="100">
+    <md-card-content layout="column" layout-align="center center" layout-fill>
+      <h2 flex class="connections-heading1">0</h2>
+      <small flex class="community-member-heading2">You currently don't have any connections </small>
+      <hr></hr>
+      <a href="#" class="connections-link">Find connections</a>
+    </md-card-content>
+  </md-card>
+  <md-card class="find-connections-card" md-theme="default" flex-gt-xs="70" flex="100">
+    <md-card-content layout="column" layout-align="center center" layout-fill>
+      <div layout="row" layout-align="space-around center">
+        <img src="./apps/icons/if_friends_195449_pink.png"></img>
+        <h2 class="find-connections-heading1">Add Personal Contacts</h2>
+      </div>
+      <div layout="row" layout-align="space-around center" style="width: 80%;">
+        <md-input-container class="md-block" flex>
+          <input type="text" ng-model="vm.targetEmail" flex>
+        </md-input-container>
+        <md-button class="md-raised md-primary">IMPORT</md-button>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>
+<hr></hr>
+<div ng-if="vm.communityMembers.length > 0" layout="row" layout-align="space-around center" layout-wrap>
+  <h1 id="suggested-connections-header1">Suggested Connections</h1>
+</div>
+<div class="community-member-container" layout="row" layout-align="space-around center" layout-wrap>
+  <md-card class="community-card" md-theme="default-inverse" ng-repeat="communityMember in vm.currentMembers" flex-gt-xs="15"
+    flex="33" layout="column" layout-align="center center">
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+
+        <h2 flex></h2>
+
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="./apps/icons/white_baseline-favorite_border-24px.svg" class="favorite-icon"></md-icon>
+        </md-button>
+
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="./apps/icons/ic_message_white_24px.svg" class="message-icon"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <img ng-src="{{communityMember.picture.large}}" class="md-card-image" alt="Washed Out">
+    <h2 flex class="community-member-heading1">{{getName(communityMember) | limitTo: 20}}</h2>
+    <small flex class="community-member-heading2">{{vm.professions[$index] | limitTo: 32}}</small>
+    <md-button class="md-raised md-accent">Connect</md-button>
+  </md-card>
+</div>
+<section ng-if="vm.communityMembers.length > 0" layout="column" layout-align="center center" layout-padding="" flex>
+  <cl-paging flex cl-pages="paging.total" cl-steps="6" cl-page-changed="paging.onPageChanged()" cl-align="start start" cl-current-page="paging.current"></cl-paging>
+</section>
+<div ng-if="vm.isLoadingCommunity" class="community-progress-container" layout="row" layout-sm="column" layout-align="space-around">
+  <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+</div>

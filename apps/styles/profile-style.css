@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.progress-dialog-inner-wrapper {
+	height: 150px;
+}
+
+.profile-info-row {
+	color: white;
+}
+
+.profile-notifications-row {
+	color: #A9A9A9;
+}
+
+md-card[md-ink-ripple] {
+	position: relative;
+}
+
+md-card[md-ink-ripple] {
+	position: relative;
+}
+
+.profile-container {
+	width: 100vw;
+	overflow-x: hidden;
+	/*background: linear-gradient(to bottom right, rgba(238, 238, 238, 0.1), rgba(248, 187, 208, 0.3));*/
+	background: #ffffff;
+}
+
+.content-container {
+	margin: 32px;
+	background: #ffffff;
+	border: 1px solid #ec407a;
+	border-radius: 15px;
+}
+
+.tabs-container {
+	border: 1px solid #ec407a;
+}
+
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #ffffff !important;
+	opacity: 1 !important;
+	/* Firefox */
+}
+
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: #ffffff !important;
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #ffffff !important;
+}
+
+:-ms-input-placeholder {
+	/* IE 10+ */
+	color: #ffffff !important;
+}
+
+::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #ffffff !important;
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: #ffffff !important;
+}
+
+.profile-photo>img {
+	min-width: 175px;
+}
+
+md-card.profile-card {
+	width: 375px;
+	height: 475px;
+	background: white;
+	position: relative;
+	margin-bottom: 100px;
+}
+
+div .profile-card>img {
+	width: 375px;
+	height: 400px;
+}
+
+div.profile-card {
+	width: 375px;
+	height: 475px;
+	background: white;
+	margin-bottom: 25px;
+	position: relative;
+}
+
+md-card {
+	position: relative;
+}
+
+md-card.profile-album-preview {
+	cursor: pointer;
+	transition: all .3s ease;
+	transform: scale(1);
+}
+
+md-card.profile-album-preview:hover {
+	transform: scale(1.25) perspective(1px)
+}
+
+md-content {
+	background: white;
+}
+
+.add-album-profile-card {
+	background-color: #d7d7d7;
+	box-shadow: 3px 5px 5px #888888;
+	border-radius: 2px;
+	transition: all 1s ease;
+	transform: scale(1);
+}
+
+.add-album-profile-card:hover {
+	background-color: #000;
+	/*  Making button bigger on hover  */
+	transform: scale(1.5) perspective(1px)
+}
+
+.profile-fab {
+	z-index: 99;
+	position: absolute;
+	bottom: -35px;
+	right: -25px;
+}
+
+.profile-section {
+	padding: 16px;
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-bottom: 32px;
+	/*text-shadow: 0 0.0625em 0 rgba(0, 0, 0, 0.25);*/
+}
+
+.profile-section small {
+	color: #505050;
+}
+
+h5 {
+	color: #A0A0A0;
+}
+
+a.profile-link {
+	color: #ff4081;
+	text-decoration: none !important;
+}
+
+.profile-start-post {
+	color: #F50057;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #ddd;
+	padding: 5px;
+	margin: 32px;
+}
+
+.profile-start-post>h3 {
+	margin-right: 5px;
+}
+
+.profile-album-text {
+	Color: white;
+}
+
+.chat-input {
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0;
+	border-radius: 0 0 0 0;
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	padding: 0px 8px 0px 8px;
+}
+
+.community-member-container {
+	overflow: hidden;
+}
+
+.community-card>img {
+	width: 100%;
+	height: auto;
+	border-radius: 50% !important;
+	cursor: pointer;
+}
+
+.community-card>h2 {
+	margin: 0px;
+}
+
+md-card.connections-card {
+	height: 300px;
+}
+
+h2.connections-heading1 {
+	color: #ff4081;
+	font-size: 48px;
+}
+
+a.connections-link {
+	color: #ff4081;
+	text-decoration: none !important;
+}
+
+hr {
+	display: block;
+	margin: 10px 0 10px 0;
+	border-top: 1px solid rgba(0, 0, 0, .12);
+	width: 100%
+}
+
+md-card.find-connections-card {
+	height: 300px;
+}
+
+h2.find-connections-heading1 {
+	margin-left: 16px;
+}
+
+#suggested-connections-header1 {
+	margin: 48px;
+}
+
+.community-progress-container {
+	margin-top: 100px;
+}

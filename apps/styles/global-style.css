@@ -1,0 +1,19 @@
+html {
+    background: #ffffff;
+}
+
+* {
+	font-family: 'Oswald', sans-serif;
+}
+
+footer {
+    margin-top: 2em;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+}
+
+a.inactive-link {
+    cursor: default;
+    text-decoration: none;
+    color: #ff4081;
+}

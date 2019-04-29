@@ -1,0 +1,71 @@
+#feed-container {
+    background: #ffffff
+}
+
+.feed-item {
+    margin: 32px;
+    border-radius: 15px;
+}
+
+.feed-item-inner-container {
+    padding: 16px;
+}
+
+.image-post > img{
+    min-height: 200px;
+    cursor: pointer;
+}
+
+.video-post > video {
+    min-height: 600px;;
+}
+
+.author-name {
+    font-weight: bold;
+    color: #000000
+}
+
+.author-heading {
+    font-weight: 200;
+    color: #808080
+}
+
+.comments-container {
+    border: 1px solid #ec407a;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+.comment {
+    padding: 8px;
+    opacity: 0.8;
+    background: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    border-radius: 5px;
+}
+
+.comment>img {
+    width: 64px;
+}
+
+.comment-text {
+    margin-left: 16px;
+}
+
+a.comments-link {
+    color: #ff4081;
+    text-decoration: none !important;
+}
+
+h3.article-description {
+    font-style: italic;
+    font-weight: 200;
+}
+
+#feed-load-container {
+    margin-top: 100px;
+}
+
+md-nav-bar .md-nav-bar {
+    background: white;
+}

@@ -1,0 +1,93 @@
+{
+	"data": [{
+		"artist": "B. B. King",
+		"album": "Live in Cook County Jail"
+	}, {
+		"artist": "Led Zeppelin",
+		"album": "Led Zeppelin"
+	}, {
+		"artist": "Raekwon",
+		"album": "Only Built 4 Cuban Linx"
+	}, {
+		"artist": "The Notorious B.I.G.",
+		"album": "Life After Death"
+	}, {
+		"artist": "Amy Winehouse",
+		"album": "Back to Black"
+	}, {
+		"artist": "Nirvana",
+		"album": "Nevermind"
+	}, {
+		"artist": "Nas",
+		"album": "Illmatic"
+	}, {
+		"artist": "Red Hot Chili Peppers",
+		"album": "Californication"
+	}, {
+		"artist": "Rage Against The Machine",
+		"album": "Rage Against The Machine"
+	}, {
+		"artist": "Kanye West",
+		"album": "My Beautiful Dark Twisted Fantasy"
+	}, {
+		"artist": "Moby",
+		"album": "Play"
+	}, {
+		"artist": "Radiohead",
+		"album": "In Rainbows"
+	}, {
+		"artist": "James Brown",
+		"album": "In The Jungle Groove"
+	}, {
+		"artist": "The Police",
+		"album": "Ghost In The Machine"
+	}, {
+		"artist": "Lauryn Hill",
+		"album": "The Miseducation of Lauryn Hill"
+	}, {
+		"artist": "The Beatles",
+		"album": "A Hard Day's Night"
+	}, {
+		"artist": "Public Enemy",
+		"album": "Fear of a Black Planet"
+	}, {
+		"artist": "U2",
+		"album": "All That You Can't Leave Behind"
+	}, {
+		"artist": "Eminem",
+		"album": "The Marshall Mathers LP"
+	}, {
+		"artist": "Prince",
+		"album": "Dirty Mind"
+	}, {
+		"artist": "Nine Inch Nails",
+		"album": "The Downward Spiral"
+	}, {
+		"artist": "Bob Marley and the Wailers",
+		"album": "Natty Dread"
+	}, {
+		"artist": "The Rolling Stones",
+		"album": "The Rolling Stones, Now!"
+	}, {
+		"artist": "Abba",
+		"album": "The Definitive Collection"
+	}, {
+		"artist": "Billy Joel",
+		"album": "The Stranger"
+	}, {
+		"artist": "The Jimi Hendrix Experience",
+		"album": "Are You Experienced?"
+	}, {
+		"artist": "Stevie Wonder",
+		"album": "Innervisions"
+	}, {
+		"artist": "Michael Jackson",
+		"album": "Thriller"
+	}, {
+		"artist": "Bruce Springsteen",
+		"album": "Born to Run"
+	}, {
+		"artist": "The Beach Boys",
+		"album": "Pet Sounds"
+	}]
+}

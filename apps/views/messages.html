@@ -1,0 +1,60 @@
+<div layout="column" style="height:100vh; background: white;" ng-cloak>
+    <section layout="row" flex>
+        <!-- <div layout="column" ui-view="message-sidebar" flex="30" style="height: 100vh; background: green;"></div>
+        <div layout="column" ui-view="message-content" flex="70" style="height: 100vh; background: blue;"></div>-->
+
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+
+            <md-toolbar class="md-theme-indigo">
+                <div class="md-toolbar-tools">
+                    <h2 flex md-truncate>Inbox</h2>
+                    <md-button class="md-icon-button" aria-label="Open" ng-if="isOpen()" ng-click="close()" hide-gt-md>
+                        <md-icon md-svg-icon="./apps/icons/white_baseline-chevron_left-24px.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-content layout-padding>
+                <md-list flex>
+                    <md-list-item class="md-3-line" ng-click="null">
+                        <img ng-src="./apps/icons/adult-attractive-beautiful-415829.jpg" class="md-avatar" alt="Beautiful Lady" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3 md-truncate>Jennifer C.</h3>
+                            <h4 md-truncate>Hey</h4>
+                            <p md-truncate>Hey {{vm.user.username}} my name is Jenny and I'd like to welcome you to the Flamingo app.
+                                 Please be a part of our community and remember to enjoy!</p>
+                        </div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                </md-list>
+            </md-content>
+        </md-sidenav>
+        <md-button ng-click="toggleLeft()" class="md-fab md-primary" hide-gt-md>
+            <md-icon md-svg-src="./apps/icons/white_baseline-chevron_right-24px.svg"></md-icon>
+        </md-button>
+        <div ui-view style="background: white;" ></div>
+        <!--<md-content flex layout-padding>
+
+            <div layout="column" layout-align="top center">
+                <p>
+                    The left sidenav will 'lock open' on a medium (>=960px wide) device.
+                </p>
+                <p>
+                    The right sidenav will focus on a specific child element.
+                </p>
+
+                <div>
+                    <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                        Toggle left
+                    </md-button>
+                </div>
+
+                <div>
+                    <md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
+                        Toggle right
+                    </md-button>
+                </div>
+            </div>
+            <div flex></div>
+        </md-content>-->
+    </section>
+</div>

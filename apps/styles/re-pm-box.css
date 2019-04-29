@@ -1,0 +1,39 @@
+.re-preview-container {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	border: 1px solid #ddd;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	background: #ffffff;
+}
+
+.re-preview-container .re-pmd-preview-frame {
+	-moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	display: table;
+	margin: 8px;
+	min-width: 200px;
+	height: 350px;
+	border: 1px solid #ddd;
+	padding: 6px;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.re-preview-container .re-pmd-preview-frame > img, .re-preview-container .re-pmd-preview-frame > video, .re-preview-container .re-pmd-preview-frame > audio {
+	height: 300px;
+	max-width: 100%;
+}
+
+.re-pmd-container .re-preview-container .re-pmd-preview-frame > object {
+	height: 300px;
+}
+
+
