@@ -1,5 +1,4 @@
 # Sign-up App
-
 AngularJS app that simulates signing up for a social site
 
 ![](apps/icons/favicon-256.png)
