@@ -1,5 +1,5 @@
 # Sign-up App
-AngularJS app that simulates signing up for a social site
+[AngularJS](https://angularjs.org/) app that simulates signing up for a social site. Also utilizes [MongoDB](https://www.mongodb.com/)
 
 ![](apps/icons/favicon-256.png)
 
